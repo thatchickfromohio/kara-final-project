@@ -12,7 +12,12 @@
 <body>
   {% include "_partials/nav.njk" %}
 
-  {% block content %}{% endblock %}
+  {% block content %}
+    {% include "_partials/freddie.html" %} 
+    {% include "_partials/brian.html" %}
+    {% include "_partials/roger.html" %}
+    {% include "_partials/john.html" %}
+  {% endblock %}
 
   {% include "_partials/footer.njk" %}
 

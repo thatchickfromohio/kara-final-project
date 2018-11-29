@@ -4,28 +4,86 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-    <h1>Main headline</h1>
-    <p class="author">By {% for author in authors %}
-      <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>{% if not loop.last %}{% if loop.revindex0 == 1 %} and {% else %}, {% endif %}{% endif %} {% endfor %}
-      <br> Published {{ publish_date }}
-    </p>
+
+ <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="../assets/img/queen-band-wallpaper.jpg" alt="First slide">
+           <div class="carousel-caption d-none d-md-block">
+    <h1>QUEEN</h1>
+    <p>The point was, to be original.</p>
+  </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../assets/img/861.jpg" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+        </div>
+  </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../assets/img/queen-band-early.jpg" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+    <h1>QUEEN</h1>
+    <p>The point was, to be original.</p>
+  </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../assets/img/q.png" alt="Third slide">
+        </div>
+          <div class="carousel-item">
+          <img class="d-block w-100" src="../assets/img/861.jpg" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+    <h1>QUEEN</h1>
+    <p>The point was, to be original.</p>
+  </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+</div>
+
+<div class="container">
+
+  <hr class="my-4 text-center"><h1>ABOUT THE BAND</h1>
+  <p>Queen are a British rock band that formed in 1970 in London. Consisting of four members, the group went on to become a groundbreaking quad stylistically both in their sound and stage presence. Most recognized from their catalog are the smash hits “We Will Rock You”, “We are the Champions”, “Another One Bites the Dust” and “Bohemian Rhapsody”</p>
+  
+</div>
+
+<div class="container">
   <div class="row">
-    <div class="col">
-    <p>
-      Lucas ipsum dolor <a href="detail-page.html">link to detail-page.html</a> amidala sith dooku solo moff organa obi-wan windu. Gamorrean binks wedge darth. Mon darth mon kit ponda solo. Moff watto ackbar mothma moff anakin. Lando skywalker lars fett calrissian lars organa. Organa kenobi wedge darth jawa skywalker anakin. Twi'lek kit darth calamari lando kamino droid. Darth jawa fett grievous maul. Palpatine obi-wan leia tusken raider dagobah. Twi'lek qui-gon boba antilles yoda thrawn. Wampa luuke wampa skywalker. Moff ponda ackbar dagobah kit lobot jinn solo.
-    </p>
-      <ul> 
-        {% for book in books %}
-          <li>{{ book.title }}, {{ book.author }}</li>
+    <div class="column col-xs-8 col-sm-4 col-md-4 col-lg-4"><h1>ALBUMS</h1>
+       <ul> 
+        {% for discs in discography %}
+          <li>{{ discs.title }}, {{ discs.year }}, {{ discs.image }}</li>
         {% else %}
-          <li>This would display if the 'books' collection were empty</li>
+          <li>This would display if the 'members' collection were empty</li>
         {% endfor %}
      </ul>
+    </div>
+ 
+    <div class="column col-xs-4 col-sm-4 col-md-4 col-lg-8 text-center"><h1><a href="detail-page.html">MEMBERS</a></h1>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-3 col-md-4 freddie-border"><img src="../assets/img/freddie-mercury-bw.jpg" class="img-fluid" alt="Responsive image">
+                <p>By Ollypop the Pirate</p>
+                  <p class="source">freddie.html</p>
+                
+      <ul> 
+        {% for member in members %}
+          <li>{{ member.name }}, {{ member.title }}</li>
+        {% else %}
+          <li>This would display if the 'members' collection were empty</li>
+        {% endfor %}
+     </ul>
+    </div>
+  </div>
     </div>
   </div>
 </div>

@@ -3,3 +3,9 @@
 .navbar {
   margin-bottom: 20px;
 }
+
+.memberlinks {
+  p:nth-child(2) {
+    background: red;
+  }
+}

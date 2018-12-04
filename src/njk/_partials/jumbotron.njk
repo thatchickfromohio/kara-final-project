@@ -1,10 +1,3 @@
-{% extends '_layouts/base.njk' %}
-
-{% block page_title %}New index page title{% endblock %}
-
-{% block content %}
-
-
  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -47,50 +40,3 @@
     </div>
   </div>
 </div>
-
-<hr class="my-4 center">
-
-<div class="container">
-<div class="row">
-  <div class="col-sm-8">
-      <h1 class="text-center">ABOUT THE BAND</h1>
-        <p class="text-center">Queen are a British rock band that formed in 1970 in London. Consisting of four members, the group went on to become a groundbreaking quad stylistically both in their sound and stage presence. Most recognized from their catalog are the smash hits “We Will Rock You”, “We are the Champions”, “Another One Bites the Dust” and “Bohemian Rhapsody”</p>
-      <h1 class="text-center mx-2">MEMBERS</h1>
-      <section>
-      <div class="row">
-        {% for member in members %}
-        <div class="col-sm-6">
-        <div class="card mb-4">
-          <img class="card-img-top img-fluid" src="assets/img/members/{{ member.imagebw }}" alt="Card image cap">
-          <div class="card-body">
-            <a href="{{member.slug}}.html">{{member.name}}, {{member.instruments}}</a>
-          </div>
-        </div>
-        </div>
-      {% endfor %}
-      </div>
-      </section>
-
-  </div>
-
-  <div class="col-sm-4">
-    <div class="discography">
-        <h1>ALBUMS</h1>
-        <ul class="list-unstyled"> 
-          {% for discs in discography %}
-          <li class="media mb-3">
-            <img class="mr-3" src="assets/img/discs/{{ discs.image }}" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">{{ discs.title }}</h5>
-              {{ discs.year }}
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>      
-  
-
-</div>
-{% endblock %}

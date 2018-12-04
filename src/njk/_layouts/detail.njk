@@ -4,12 +4,18 @@
 <article class="container">
   <div class="row">
     <div class="col-sm-4 left-rail">
-      {{members.name }}
+     <img class="mr-3" src="assets/img/members/{{ members.image }}" style="width:300px;height:400px;" alt="Generic placeholder image">
+      <p> <h4> Instruments:</h4> {{members.instruments}}</p>
+      <p> <h4> Years Active: </h4>{{members.tenure}} </p>
+     <p><h4> Born Date: </h4> {{ members.birthdate}} </p> <p> {{members.birthplace}}</p>
     </div>
+    
     <div class="col-sm-8">
-      {% block story %}{% endblock %}
-
+      <h1> {{ members.name }} </h1>
+     
+      <p>{{ members.text | safe}}</p>
     </div>
   </div>
 </article>
 {% endblock %}
+      
